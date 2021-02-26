@@ -1,0 +1,34 @@
+
+<!-- Question 1 du TP-->
+<input [(ngModel)]="id">
+<br>
+<!-- Question 3 du TP-->
+<input readonly [(ngModel)]="id">
+<br>
+
+Valeur de id: {{id}}
+<br>
+Le Pokemon sélectionné est: {{selectedPokeId}}
+<br>
+
+<!-- Question 6 du TP
+<ul>
+  <li *ngFor="let poke of pokes ">{{poke.name}}</li>
+</ul>
+-->
+<!-- Question 7 du TP-->
+<br>
+<input  [(ngModel)]="searchPokeName">
+<br>
+
+<select [(ngModel)]="selectedPokeId">
+  <option [value]="poke.id" *ngFor="let poke of pokes | filterPokemonPipe: 'name': searchPokeName">{{poke.name}}</option>
+</select>
+<button (click)="go()">Go</button>
+<br>
+<div *ngIf="pokeDetail">
+  <app-pokedetail [detail]="pokeDetail"></app-pokedetail>
+
+</div>
+
+
